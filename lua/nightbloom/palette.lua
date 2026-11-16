@@ -25,16 +25,15 @@ local palette = {
 
   -- Purples (the lead accents)
   iris     = "#c9b2ff", -- functions, primary UI accent (Embark purple x Rose Pine iris)
-  violet   = "#a98cf6", -- keywords, tags (Embark dark purple, brightened)
-  orchid   = "#e2a7f4", -- constants, escapes, search (pink-leaning purple)
+  violet   = "#a98cf6", -- keywords, tag attributes (Embark dark purple, brightened)
   lavender = "#bdb3e8", -- properties / fields
 
   -- Supporting accents
-  love     = "#f27ca5", -- booleans, errors, builtin vars (Rose Pine love x Embark red)
-  rose     = "#f0bdca", -- numbers, parameter names in doc comments
-  gold     = "#f6ca8c", -- strings, warnings (Rose Pine gold x Embark yellow)
+  love     = "#f27ca5", -- control flow, escapes, macros, tags, errors (Rose Pine love x Embark red)
+  rose     = "#f0bdca", -- numbers, booleans, constants, doc-comment params
+  gold     = "#f6ca8c", -- strings, decorators, search, warnings (Rose Pine gold x Embark yellow)
   foam     = "#9fdce6", -- types (Rose Pine foam x Embark cyan)
-  pine     = "#7b93f2", -- modules, builtins (Rose Pine pine, shifted to periwinkle)
+  pine     = "#7b93f2", -- modules, builtins, self/this (Rose Pine pine, shifted to periwinkle)
   mint     = "#9de6cc", -- parameters, git added, success (Embark green)
 }
 

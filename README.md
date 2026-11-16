@@ -22,15 +22,14 @@ functions, the cursor, borders, selection and search all carry a purple tone.
 | `muted`    | `#726d96` | comments                                   |
 | `subtle`   | `#9c97c8` | operators, punctuation                     |
 | `text`     | `#e3ddf6` | text                                       |
-| `iris`     | `#c9b2ff` | functions, primary accent                  |
-| `violet`   | `#a98cf6` | keywords, tags                             |
-| `orchid`   | `#e2a7f4` | constants, escapes, search                 |
+| `iris`     | `#c9b2ff` | functions, methods, primary accent         |
+| `violet`   | `#a98cf6` | keywords (`local`, `function`, `import`), tag attributes|
 | `lavender` | `#bdb3e8` | properties / fields                        |
-| `love`     | `#f27ca5` | booleans, `self`/`this`, errors            |
-| `rose`     | `#f0bdca` | numbers, parameter names in doc comments   |
-| `gold`     | `#f6ca8c` | strings, warnings                          |
+| `love`     | `#f27ca5` | control flow (`if`, `for`, `return`), escapes, macros, tags, errors|
+| `rose`     | `#f0bdca` | numbers, booleans, constants, doc-comment params|
+| `gold`     | `#f6ca8c` | strings, decorators, search, warnings      |
 | `foam`     | `#9fdce6` | types (and parameters in `nightbloom-foam`) |
-| `pine`     | `#7b93f2` | modules, builtin functions                 |
+| `pine`     | `#7b93f2` | modules, builtin functions, `self`/`this`  |
 | `mint`     | `#9de6cc` | parameters, git added, success             |
 
 ## Variants
@@ -77,7 +76,7 @@ require("nightbloom").setup({
   transparent = false,     -- leave editor/float backgrounds unpainted
   dim_inactive = false,    -- darker background for unfocused windows
   terminal_colors = true,  -- set :terminal ANSI colors
-  parameter_color = "mint", -- any palette key ("foam", "rose", ...) or a hex color
+  parameter_color = "mint", -- any palette key ("foam", "gold", ...) or a hex color
   styles = {
     comments = { italic = true },
     keywords = {},           -- e.g. { italic = true } or { bold = true }
@@ -112,7 +111,7 @@ require("nightbloom").setup({
 require("lualine").setup({ options = { theme = "nightbloom" } })
 ```
 
-Modes: normal = violet, insert = foam, visual = orchid, replace = love, command = gold,
+Modes: normal = violet, insert = foam, visual = love, replace = pine, command = gold,
 terminal = mint.
 
 ## Supported plugins

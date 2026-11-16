@@ -13,8 +13,8 @@ end
 return {
   normal   = mode(c.violet),
   insert   = mode(c.foam),
-  visual   = mode(c.orchid),
-  replace  = mode(c.love),
+  visual   = mode(c.love),
+  replace  = mode(c.pine),
   command  = mode(c.gold),
   terminal = mode(c.mint),
   inactive = {
