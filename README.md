@@ -3,25 +3,24 @@
 A dark Neovim colorscheme that blends **Rose Pine** and **Embark**, leaning into purples.
 
 Rose Pine contributes the soft, slightly dusty accents and the "love / gold / rose / foam / iris"
-structure. Embark contributes the brighter pastel glow and its deep space backgrounds. The background
-ramp is pushed to hue ~258° (Rose Pine sits at ~249°, Embark at ~246°), so the editor reads as dusky
-violet instead of navy. Keywords, functions, the cursor, borders, selection and search all carry a
-purple tone.
+structure. Embark contributes the brighter pastel glow and its deep space backgrounds. The backgrounds
+are indigo: Embark's blue-violet hue (~246°) with a little more saturation, so the purple accents pop
+against them. Keywords, functions, the cursor, borders, selection and search all carry a purple tone.
 
 ## Palette
 
 | Name       | Hex       | Used for                                   |
 |------------|-----------|--------------------------------------------|
-| `crust`    | `#100c1a` | tab fill                                   |
-| `mantle`   | `#150f21` | floats, sidebars, statusline               |
-| `base`     | `#1d162d` | editor background                          |
-| `hl_low`   | `#221a35` | cursorline                                 |
-| `surface`  | `#251c38` | popup menu, folds                          |
-| `overlay`  | `#2f2546` | selected menu item                         |
-| `hl_med`   | `#3d3258` | match paren, LSP references                |
-| `hl_high`  | `#51446f` | scrollbar thumb                            |
-| `muted`    | `#746892` | comments                                   |
-| `subtle`   | `#a295c6` | operators, punctuation                     |
+| `crust`    | `#0d0c1a` | tab fill                                   |
+| `mantle`   | `#110f22` | floats, sidebars, statusline               |
+| `base`     | `#18152d` | editor background                          |
+| `hl_low`   | `#1c1a35` | cursorline                                 |
+| `surface`  | `#1f1c38` | popup menu, folds                          |
+| `overlay`  | `#282447` | selected menu item                         |
+| `hl_med`   | `#353159` | match paren, LSP references                |
+| `hl_high`  | `#48436f` | scrollbar thumb                            |
+| `muted`    | `#6b6793` | comments                                   |
+| `subtle`   | `#9994c7` | operators, punctuation                     |
 | `text`     | `#e3ddf6` | text                                       |
 | `iris`     | `#c9b2ff` | functions, primary accent                  |
 | `violet`   | `#a98cf6` | keywords, tags                             |
