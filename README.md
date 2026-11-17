@@ -42,6 +42,60 @@ functions, the cursor, borders, selection and search all carry a purple tone.
 Everything else is identical. Switch with `:colorscheme nightbloom-foam`, or set
 `parameter_color = "foam"` in `setup()` and keep using `nightbloom`.
 
+### Experimental: keyword / function-name variants
+
+In `nightbloom`, keywords (`violet`, hue 295°) and function names (`iris`, hue 298°) are the same
+hue and differ only in brightness, so `function` and `setup` blur together. These variants pull them
+apart on the same background. None of them uses pink or red for keywords, control flow or function
+names; `if` / `for` / `return` take the keyword color instead of `love`. Try one with
+`:colorscheme nightbloom-blue` (etc.), then keep it.
+
+| Colorscheme         | `local` / `function` / `if` / `return` | Function names      | Parameters   |
+|---------------------|----------------------------------------|---------------------|--------------|
+| `nightbloom-blue`   | cornflower `#5598f6` (shared with builtins like `vim`, `self`) | lavender `#c9b2ff` | mint italic |
+| `nightbloom-indigo` | deep indigo `#8477f3`                  | pale lavender `#d7c7fe` | mint italic |
+| `nightbloom-mint`   | violet `#a98cf6` (unchanged)           | mint `#9de6cc`      | foam italic  |
+| `nightbloom-ember`  | warm peach `#f4a16d`                   | lavender `#c9b2ff`  | foam italic  |
+| `nightbloom-lagoon` | teal `#30c6bf`                         | lavender `#c9b2ff`  | mint italic  |
+| `nightbloom-dusty`  | dusty periwinkle `#8193d5`, italic     | soft lavender `#c3b4ea` | mint italic |
+
+`ember`, `lagoon` and `dusty` are the wider-range ones. `ember` also moves strings from gold to mint so
+they don't compete with the peach. `dusty` lowers every accent to about 70% of its chroma, the Rose
+Pine half of the blend with less of the Embark glow. It then adds two accents of its own: types, type
+declarations and builtin types in bright indigo `#8477f3`, and folders (tree, oil, `Directory`) in
+blue `#84aee3`. To balance the purple, properties and fields are foam teal and punctuation and
+operators a cool slate `#90a0b4`.
+
+The background and the syntax scheme are independent halves defined in
+[`lua/nightbloom/variants.lua`](lua/nightbloom/variants.lua). A second background, `dusk` (Rose
+Pine's own `#191724`), is defined but unused; to try it with one of the schemes, change one word in
+`M.list`:
+
+```lua
+["nightbloom-blue"] = { background = "dusk", syntax = "blue" },
+```
+
+While comparing, use `theme = "auto"` in lualine so the statusline follows whichever one is active.
+
+### Syntax roles
+
+Optional palette keys let you recolor keywords, function names, strings, types and folders without
+touching the accents they borrow from. Unset, they follow the accents below, so the stock theme is
+unchanged:
+
+| Key       | Default  | Used for                                   |
+|-----------|----------|--------------------------------------------|
+| `keyword` | `violet` | `local`, `function`, `import`, preprocessor |
+| `control` | `love`   | `if`, `for`, `return`, `try`/`catch`        |
+| `func`    | `iris`   | function and method names                   |
+| `string`  | `gold`   | string literals                             |
+| `type`    | `foam`   | type names, declarations, builtin types, constructors |
+| `property` | `lavender` | fields and properties (`opts.name`)       |
+| `punctuation` | `subtle` | operators, brackets, delimiters         |
+| `folder`  | none     | directory names and icons (nvim-tree, neo-tree, oil, `Directory`); unset keeps each group's own color |
+
+Each takes a hex color or another palette key, e.g. `on_colors = function(c) c.keyword = "pine" end`.
+
 ## Install
 
 The repo is a standard Neovim plugin layout, so any plugin manager works.

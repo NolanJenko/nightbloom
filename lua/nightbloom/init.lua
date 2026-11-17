@@ -25,14 +25,48 @@ function M.setup(opts)
   M.config = vim.tbl_deep_extend("force", M.config, opts or {})
 end
 
---- Palette after `on_colors` overrides have been applied.
+-- Syntax roles and the accent each one follows when unset. Resolved in this
+-- order, so a later role may name an earlier one (control = "keyword").
+local roles = {
+  { "keyword", "violet" },
+  { "control", "love" },
+  { "func", "iris" },
+  { "string", "gold" },
+  { "type", "foam" },
+  { "property", "lavender" },
+  { "punctuation", "subtle" },
+  { "folder" }, -- no default: each folder group keeps its own stock color
+}
+
+--- Stock palette -> variant overrides -> `on_colors` -> syntax roles.
+---@param config NightbloomConfig
+---@param name string|nil colorscheme name, used to find variant overrides
 ---@return NightbloomPalette
-function M.colors()
+local function resolve(config, name)
   local colors = vim.deepcopy(require("nightbloom.palette"))
-  if M.config.on_colors then
-    M.config.on_colors(colors)
+  local variant = require("nightbloom.variants").palette(name)
+  if variant then
+    colors = vim.tbl_extend("force", colors, variant)
+  end
+  if config.on_colors then
+    config.on_colors(colors)
+  end
+  -- Resolved last so a user tweaking `iris` etc. in on_colors still moves
+  -- whatever follows it. A role may name another palette key.
+  for _, r in ipairs(roles) do
+    local role, default = r[1], r[2]
+    local value = colors[role] or default
+    if value then
+      colors[role] = colors[value] or value
+    end
   end
   return colors
+end
+
+--- Palette of the active colorscheme (variant overrides and `on_colors` applied).
+---@return NightbloomPalette
+function M.colors()
+  return resolve(M.config, M.active)
 end
 
 ---@param name string|nil colorscheme name (variants pass their own)
@@ -47,10 +81,11 @@ function M.load(name, overrides)
   vim.o.termguicolors = true
   vim.o.background = "dark"
   vim.g.colors_name = name or "nightbloom"
+  M.active = vim.g.colors_name
 
   local config = vim.tbl_deep_extend("force", M.config, overrides or {})
   local hl = require("nightbloom.highlights")
-  local colors = M.colors()
+  local colors = resolve(config, M.active)
   local groups = hl.get(colors, config)
 
   if config.on_highlights then

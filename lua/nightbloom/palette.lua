@@ -35,6 +35,17 @@ local palette = {
   foam     = "#9fdce6", -- types (Rose Pine foam x Embark cyan)
   pine     = "#7b93f2", -- modules, builtins, self/this (Rose Pine pine, shifted to periwinkle)
   mint     = "#9de6cc", -- parameters, git added, success (Embark green)
+
+  -- Optional syntax roles, resolved in init.lua. Unset, they follow the accents:
+  --   keyword -> violet   (local, function, import)
+  --   control -> love     (if, for, return)
+  --   func    -> iris     (function names)
+  --   string  -> gold     (string literals)
+  --   type    -> foam     (type names, declarations, builtin types)
+  --   property    -> lavender (fields and properties: opts.name)
+  --   punctuation -> subtle   (operators, brackets, delimiters)
+  --   folder  -> (unset)  (directory names and icons; unset keeps each group's own color)
+  -- Set one to a hex color, or to another key here (e.g. keyword = "pine").
 }
 
 return palette
