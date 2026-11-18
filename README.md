@@ -51,12 +51,13 @@ Pine half of the blend with less of the Embark glow. Try it with `:colorscheme n
 
 | What                                          | Color                                   |
 |-----------------------------------------------|-----------------------------------------|
-| `local` / `function` / `if` / `return`        | dusty periwinkle `#8193d5` (keywords italic) |
-| Function names                                | soft lavender `#c3b4ea`                 |
+| `local` / `function` / `if` / `return`        | dusty violet `#a391da` (keywords italic) |
+| Function and method names                     | blue `#84aee3`                          |
 | Types, type declarations, builtin types       | bright indigo `#8477f3`                 |
-| Folders (nvim-tree, neo-tree, oil, `Directory`) | blue `#84aee3`                        |
-| Properties and fields                         | foam teal `#acd5dc`                     |
-| Punctuation and operators                     | cool slate `#90a0b4`                    |
+| Properties and fields                         | teal `#7fbec5`                          |
+| Builtins (`pcall`, `require`, `vim`, `self`)  | foam `#acd5dc`                          |
+| Punctuation and operators                     | dim slate `#7e8796`                     |
+| Folders (nvim-tree, neo-tree, oil, `Directory`) | blue `#84aee3`, same as function names |
 
 Parameters stay mint italic, strings gold and numbers rose, each at the lower chroma. Control flow
 takes the keyword color instead of `love`, so nothing uses pink or red for keywords.
@@ -73,7 +74,7 @@ If you use lualine, set `theme = "auto"` so the statusline follows whichever col
 
 ### Syntax roles
 
-Optional palette keys let you recolor keywords, function names, strings, types and folders without
+Optional palette keys let you recolor keywords, builtins, function names, strings, types and folders without
 touching the accents they borrow from. Unset, they follow the accents below, so the stock theme is
 unchanged:
 
@@ -81,6 +82,7 @@ unchanged:
 |-----------|----------|--------------------------------------------|
 | `keyword` | `violet` | `local`, `function`, `import`, preprocessor |
 | `control` | `love`   | `if`, `for`, `return`, `try`/`catch`        |
+| `builtin` | `pine`   | builtin functions, variables and modules (`pcall`, `self`, `vim`) |
 | `func`    | `iris`   | function and method names                   |
 | `string`  | `gold`   | string literals                             |
 | `type`    | `foam`   | type names, declarations, builtin types, constructors |

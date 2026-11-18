@@ -29,17 +29,18 @@ M.backgrounds = {
 M.syntax = {
   -- Every accent at ~70% chroma (the Rose Pine half of the blend, less of the
   -- Embark glow). Hexes are the stock accents with chroma scaled in OKLCH.
-  -- Keywords and control flow share a dusty periwinkle (italic keywords are set
+  -- Keywords and control flow share the dusty violet (italic keywords are set
   -- in colors/nightbloom-dusty.lua), so nothing uses pink or red for them.
-  -- Types are the one saturated note (indigo), folders a clear blue, properties
-  -- foam teal and punctuation a cool slate, to keep the purple in check.
+  -- Function names are a clear blue (shared with folders), types the one
+  -- saturated note (indigo), properties teal and builtins foam, so each sits
+  -- in its own hue. Punctuation is a dim slate that recedes behind them.
   dusty = {
     iris = "#c3b4ea", violet = "#a391da", lavender = "#b9b3d8", love = "#db88a3",
     rose = "#e3bfc8", gold = "#e8caa0", foam = "#acd5dc", pine = "#8193d5",
     mint = "#acdecb",
-    keyword = "pine", control = "keyword",
-    type = "#8477f3", folder = "#84aee3",
-    property = "foam", punctuation = "#90a0b4",
+    keyword = "violet", control = "keyword", builtin = "foam",
+    func = "#84aee3", type = "#8477f3", property = "#7fbec5",
+    punctuation = "#7e8796", folder = "#84aee3",
   },
 }
 

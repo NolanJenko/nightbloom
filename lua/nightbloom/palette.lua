@@ -39,6 +39,7 @@ local palette = {
   -- Optional syntax roles, resolved in init.lua. Unset, they follow the accents:
   --   keyword -> violet   (local, function, import)
   --   control -> love     (if, for, return)
+  --   builtin -> pine     (builtin functions, variables and modules: pcall, vim, self)
   --   func    -> iris     (function names)
   --   string  -> gold     (string literals)
   --   type    -> foam     (type names, declarations, builtin types)

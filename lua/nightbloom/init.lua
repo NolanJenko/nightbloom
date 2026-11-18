@@ -30,6 +30,7 @@ end
 local roles = {
   { "keyword", "violet" },
   { "control", "love" },
+  { "builtin", "pine" },
   { "func", "iris" },
   { "string", "gold" },
   { "type", "foam" },

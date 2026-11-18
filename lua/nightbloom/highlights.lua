@@ -163,7 +163,7 @@ function M.get(c, o)
 
     --------------------------------------------------------------- Treesitter
     ["@variable"]                   = { fg = c.text },
-    ["@variable.builtin"]           = { fg = c.pine, italic = true },
+    ["@variable.builtin"]           = { fg = c.builtin, italic = true },
     ["@variable.parameter"]         = style({ fg = param }, s.parameters),
     ["@variable.parameter.builtin"] = { fg = param, italic = true },
     ["@variable.member"]            = { fg = c.property },
@@ -178,8 +178,8 @@ function M.get(c, o)
     ["@constant.builtin"] = { fg = c.rose },
     ["@constant.macro"]   = { fg = c.love },
 
-    ["@module"]         = { fg = c.pine },
-    ["@module.builtin"] = { fg = c.pine, italic = true },
+    ["@module"]         = { fg = c.builtin },
+    ["@module.builtin"] = { fg = c.builtin, italic = true },
     ["@label"]          = { fg = c.foam },
 
     ["@string"]                = { link = "String" },
@@ -204,7 +204,7 @@ function M.get(c, o)
     ["@property"]        = { fg = c.property },
 
     ["@function"]             = { link = "Function" },
-    ["@function.builtin"]     = { fg = c.pine },
+    ["@function.builtin"]     = { fg = c.builtin },
     ["@function.call"]        = { link = "Function" },
     ["@function.macro"]       = { fg = c.love },
     ["@function.method"]      = { link = "Function" },
@@ -566,7 +566,7 @@ function M.get(c, o)
   local kinds = {
     Text = c.subtle, Method = c.func, Function = c.func, Constructor = c.type,
     Field = c.property, Variable = c.text, Class = c.type, Interface = c.type,
-    Module = c.pine, Property = c.property, Unit = c.rose, Value = c.rose,
+    Module = c.builtin, Property = c.property, Unit = c.rose, Value = c.rose,
     Enum = c.type, Keyword = c.keyword, Snippet = c.love, Color = c.rose,
     File = c.subtle, Reference = c.rose, Folder = c.folder or c.iris, EnumMember = c.rose,
     Constant = c.rose, Struct = c.type, Event = c.gold, Operator = c.subtle,
