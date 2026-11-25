@@ -72,6 +72,18 @@ Pine's own `#191724`), is defined but unused; to try it with dusty, change one w
 
 If you use lualine, set `theme = "auto"` so the statusline follows whichever colorscheme is active.
 
+### Forest variants
+
+| Colorscheme | Palette |
+|-------------|---------|
+| `nightbloom-frostwood` | Blue-green backgrounds, pine strings, ice-blue keywords |
+| `nightbloom-frostwood-sage` | Frostwood with softer sage strings and green accents |
+| `nightbloom-frostwood-moss-light` | Frostwood with brighter moss strings and cooler blue accents |
+| `nightbloom-winter-pine` | Spruce backgrounds, lavender keywords, ice-blue functions, jade types |
+
+Load one with `:colorscheme nightbloom-frostwood` or substitute any name from the table.
+Each name also works as a lualine theme.
+
 ### Syntax roles
 
 Optional palette keys let you recolor keywords, builtins, function names, strings, types and folders without
