@@ -252,10 +252,9 @@ local groups = {
   ["@lsp.typemod.function.defaultLibrary"] = { link = "@function.builtin" },
   ["@lsp.typemod.variable.readonly"]       = { link = "@constant" },
 
-  -- Lean: keywords and tactics (theorem, by, simp, rw, exact…) in moss green.
-  -- Scoped with ".lean", so other languages keep ice-blue keywords.
-  ["@lsp.type.keyword.lean"]    = { fg = p.pine, italic = true },
-  ["@keyword.lean"]             = { fg = p.pine, italic = true },
+  -- Lean: bound variables and hypotheses (n, h, x…) in moss green.
+  -- Scoped with ".lean", so other languages keep snow-white variables.
+  ["@lsp.type.variable.lean"]   = { fg = p.pine },
   LspReferenceText              = { bg = p.thicket },
   LspReferenceRead              = { bg = p.thicket },
   LspReferenceWrite             = { bg = p.thicket, underline = true },
