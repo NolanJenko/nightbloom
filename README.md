@@ -82,7 +82,9 @@ If you use lualine, set `theme = "auto"` so the statusline follows whichever col
 | `nightbloom-winter-pine` | Spruce backgrounds, lavender keywords, ice-blue functions, jade types |
 
 Load one with `:colorscheme nightbloom-frostwood` or substitute any name from the table.
-Each name also works as a lualine theme.
+These standalone schemes use their original highlights, backgrounds, and terminal colors.
+For the three Frostwood schemes, set `vim.g.frostwood_transparent = true` or
+`vim.g.frostwood_italics = false` before loading to use their original options.
 
 ### Syntax roles
 

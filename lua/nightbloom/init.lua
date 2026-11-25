@@ -64,11 +64,10 @@ local function resolve(config, name)
   return colors
 end
 
---- Palette of the named or active colorscheme, with `on_colors` applied.
----@param name string|nil
+--- Palette of the active colorscheme (variant overrides and `on_colors` applied).
 ---@return NightbloomPalette
-function M.colors(name)
-  return resolve(M.config, name or M.active)
+function M.colors()
+  return resolve(M.config, M.active)
 end
 
 ---@param name string|nil colorscheme name (variants pass their own)
